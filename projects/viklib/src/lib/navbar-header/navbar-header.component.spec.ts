@@ -1,6 +1,4 @@
-/* tslint:disable:no-unused-variable */
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { NavbarHeaderComponent } from './navbar-header.component';
 
 describe('NavbarHeaderComponent', () => {
@@ -11,11 +9,11 @@ describe('NavbarHeaderComponent', () => {
     await TestBed.configureTestingModule({
       imports: [NavbarHeaderComponent],
     }).compileComponents();
+    fixture = TestBed.createComponent(NavbarHeaderComponent);
+    component = fixture.componentInstance;
   });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(NavbarHeaderComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
+    expect(component).toBeTruthy();
   });
 });

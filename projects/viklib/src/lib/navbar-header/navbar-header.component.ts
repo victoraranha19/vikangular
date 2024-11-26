@@ -4,38 +4,32 @@ import { INavbarContents } from '../viklib.interfaces';
 @Component({
   selector: 'lib-navbar-header',
   styles: `
-  ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  nav {
     overflow: hidden;
     background-color: #333;
   }
-  li {
+  a {
     float: left;
-  }
-  li a {
     display: block;
     color: #fff;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
   }
-  li a:hover {
+  a:hover {
     background-color: #111;
   }
   `,
   template: `
-    <ul>
-      <li *ngFor="let item of navbarContent">
-        <a
-          [href]="item.href ?? 'javascript:void(0)'"
-          [routerLink]="item.routerLink"
-        >
-          {{ item.label }}
-        </a>
-      </li>
-    </ul>
+    <nav>
+      <a
+        *ngFor="let item of navbarContent"
+        [href]="item.href ?? 'javascript:void(0)'"
+        [routerLink]="item.routerLink"
+      >
+        {{ item.label }}
+      </a>
+    </nav>
   `,
 })
 export class NavbarHeaderComponent implements OnInit {

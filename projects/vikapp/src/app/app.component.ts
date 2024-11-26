@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {
+  ButtonModule,
   INavbarContents,
   NavbarHeaderModule,
   TextareaComponent,
@@ -9,7 +10,12 @@ import {
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TextInputComponent, TextareaComponent, NavbarHeaderModule],
+  imports: [
+    TextInputComponent,
+    TextareaComponent,
+    NavbarHeaderModule,
+    ButtonModule,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
