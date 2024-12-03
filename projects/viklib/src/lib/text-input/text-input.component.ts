@@ -1,10 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'lib-text-input',
-  standalone: true,
-  imports: [],
-  styles: `
+    selector: 'lib-text-input',
+    imports: [],
+    styles: `
   section {
     display: grid;
     gap: 6px;
@@ -25,12 +24,12 @@ import { Component, Input, OnInit } from '@angular/core';
     border-bottom: 2px solid #222;
   }
   `,
-  template: `
+    template: `
     <section>
       <label for="text-input">{{ label }}</label>
       <input id="text-input" [placeholder]="placeholder" [value]="value" />
     </section>
-  `,
+  `
 })
 export class TextInputComponent implements OnInit {
   @Input() label = '';

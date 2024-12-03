@@ -2,8 +2,8 @@ import { Component, Input, OnInit } from '@angular/core';
 import { INavbarContents } from '../viklib.interfaces';
 
 @Component({
-  selector: 'lib-navbar-header',
-  styles: `
+    selector: 'lib-navbar-header',
+    styles: `
   nav {
     overflow: hidden;
     background-color: #333;
@@ -20,7 +20,7 @@ import { INavbarContents } from '../viklib.interfaces';
     background-color: #111;
   }
   `,
-  template: `
+    template: `
     <nav>
       <a
         *ngFor="let item of navbarContent"
@@ -31,6 +31,7 @@ import { INavbarContents } from '../viklib.interfaces';
       </a>
     </nav>
   `,
+    standalone: false
 })
 export class NavbarHeaderComponent implements OnInit {
   @Input() navbarContent: INavbarContents[] = [];
