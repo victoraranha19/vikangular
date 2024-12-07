@@ -1,9 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-    selector: 'lib-textarea',
-    imports: [],
-    styles: `
+  selector: 'lib-textarea',
+  standalone: true,
+  styles: `
   section {
     display: grid;
     gap: 6px;
@@ -25,7 +25,7 @@ import { Component, Input, OnInit } from '@angular/core';
     border-bottom: 2px solid #222;
   }
   `,
-    template: `
+  template: `
     <section>
       <label for="textarea">{{ label }}</label>
       <textarea
@@ -35,7 +35,7 @@ import { Component, Input, OnInit } from '@angular/core';
         [placeholder]="placeholder"
       ></textarea>
     </section>
-  `
+  `,
 })
 export class TextareaComponent implements OnInit {
   @Input() label = '';

@@ -1,0 +1,29 @@
+<nav *ngIf="!demo">
+  <a
+    *ngFor="let item of navbarContent"
+    [href]="item.href ?? 'javascript:void(0)'"
+    [routerLink]="item.routerLink"
+  >
+    {{ item.label }}
+  </a>
+</nav>
+<div
+  *ngIf="demo"
+  cdkDropListGroup
+  style="display: flex; flex-direction: row; justify-content: center"
+>
+  <div *ngFor="let nivel1 of navbarContent" class="navbar-container">
+    <span class="nivel1">{{ nivel1.label }}</span>
+    <div
+      *ngIf="nivel1.menu"
+      cdkDropList
+      [cdkDropListData]="nivel1.menu"
+      class="navbar-list"
+      (cdkDropListDropped)="drop($event)"
+    >
+      <div *ngFor="let nivel2 of nivel1.menu" cdkDrag class="navbar">
+        {{ nivel2.label }}
+      </div>
+    </div>
+  </div>
+</div>

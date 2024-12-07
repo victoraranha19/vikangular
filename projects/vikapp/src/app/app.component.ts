@@ -7,26 +7,37 @@ import {
   TextInputComponent,
 } from '../../../viklib/src/public-api';
 import { VikService } from './services/vik.service';
+import {
+  CdkDrag,
+  CdkDragDrop,
+  CdkDropList,
+  CdkDropListGroup,
+  moveItemInArray,
+  transferArrayItem,
+} from '@angular/cdk/drag-drop';
+import { CommonModule } from '@angular/common';
 
 @Component({
-    selector: 'app-root',
-    imports: [
-        TextInputComponent,
-        TextareaComponent,
-        NavbarHeaderModule,
-        ButtonModule,
-    ],
-    templateUrl: './app.component.html',
-    styleUrl: './app.component.scss'
+  selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    TextInputComponent,
+    TextareaComponent,
+    NavbarHeaderModule,
+    ButtonModule,
+  ],
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.scss',
 })
 export class AppComponent implements OnInit {
-  public navbarContent: INavbarContents[] = [];
+  public navbar: INavbarContents[] = [];
 
   constructor(private _vikService: VikService) {}
 
   ngOnInit(): void {
     this._vikService.getNavbar().subscribe((nav) => {
-      this.navbarContent = nav;
+      this.navbar = [...nav];
     });
   }
 }

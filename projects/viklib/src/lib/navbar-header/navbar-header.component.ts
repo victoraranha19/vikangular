@@ -1,42 +1,27 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { INavbarContents } from '../viklib.interfaces';
+import { CdkDragDrop, transferArrayItem } from '@angular/cdk/drag-drop';
 
 @Component({
-    selector: 'lib-navbar-header',
-    styles: `
-  nav {
-    overflow: hidden;
-    background-color: #333;
-  }
-  a {
-    float: left;
-    display: block;
-    color: #fff;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-  }
-  a:hover {
-    background-color: #111;
-  }
-  `,
-    template: `
-    <nav>
-      <a
-        *ngFor="let item of navbarContent"
-        [href]="item.href ?? 'javascript:void(0)'"
-        [routerLink]="item.routerLink"
-      >
-        {{ item.label }}
-      </a>
-    </nav>
-  `,
-    standalone: false
+  selector: 'lib-navbar-header',
+  styleUrls: ['./navbar-header.component.scss'],
+  templateUrl: './navbar-header.component.html',
+  standalone: false,
 })
 export class NavbarHeaderComponent implements OnInit {
   @Input() navbarContent: INavbarContents[] = [];
+  @Input() demo = false;
 
   constructor() {}
 
   ngOnInit() {}
+
+  drop(event: CdkDragDrop<INavbarContents[]>): void {
+    transferArrayItem(
+      event.previousContainer.data,
+      event.container.data,
+      event.previousIndex,
+      event.currentIndex
+    );
+  }
 }

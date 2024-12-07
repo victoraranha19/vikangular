@@ -8,8 +8,8 @@ import {
 } from '@angular/core';
 
 @Directive({
-    selector: '[vikButton]',
-    standalone: false
+  selector: '[vikButton]',
+  standalone: false,
 })
 export class ButtonDirective implements OnInit {
   @Input() kind: IButtonKind = 'default';
