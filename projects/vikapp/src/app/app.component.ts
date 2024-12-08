@@ -3,6 +3,7 @@ import {
   ButtonModule,
   INavbarContents,
   NavbarHeaderModule,
+  SelectFieldComponent,
   TextareaComponent,
   TextInputComponent,
 } from '../../../viklib/src/public-api';
@@ -25,6 +26,7 @@ import { CommonModule } from '@angular/common';
     TextInputComponent,
     TextareaComponent,
     NavbarHeaderModule,
+    SelectFieldComponent,
     ButtonModule,
   ],
   templateUrl: './app.component.html',
