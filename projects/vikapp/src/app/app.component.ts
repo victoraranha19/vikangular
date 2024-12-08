@@ -17,18 +17,12 @@ import {
   transferArrayItem,
 } from '@angular/cdk/drag-drop';
 import { CommonModule } from '@angular/common';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [
-    CommonModule,
-    TextInputComponent,
-    TextareaComponent,
-    NavbarHeaderModule,
-    SelectFieldComponent,
-    ButtonModule,
-  ],
+  imports: [CommonModule, NavbarHeaderModule, RouterOutlet],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

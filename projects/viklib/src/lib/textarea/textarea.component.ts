@@ -18,7 +18,7 @@ import { Component, Input, OnInit } from '@angular/core';
     border: none;
     border-bottom: 2px solid #999;
     background-color: #eee;
-    min-width: 50%;
+    min-width: 99%;
   }
   textarea:focus {
     outline: none;
