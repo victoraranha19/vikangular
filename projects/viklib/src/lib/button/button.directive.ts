@@ -48,10 +48,10 @@ export class ButtonDirective implements OnInit {
     this.element.nativeElement.style.backgroundColor = this._color.t0;
   }
   @HostListener('mousedown') onMouseDown() {
-    this.element.nativeElement.style.backgroundColor = this._color.t2;
+    this.element.nativeElement.style.backgroundColor = this._color.t1;
   }
   @HostListener('mouseup') onMouseUp() {
-    this.element.nativeElement.style.backgroundColor = this._color.t1;
+    this.element.nativeElement.style.backgroundColor = this._color.t2;
   }
 }
 
@@ -69,8 +69,8 @@ const purpleColor: IColorPallet = {
   contrast: '#fff',
 };
 const pinkColor: IColorPallet = {
-  t0: '#fbb',
-  t1: '#f99',
-  t2: '#f77',
+  t0: '#f77',
+  t1: '#f55',
+  t2: '#f33',
   contrast: '#fff',
 };
