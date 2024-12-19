@@ -1,8 +1,20 @@
-<h1>Componentes de Formulário</h1>
+<h1>Advent of code - day 1</h1>
 <br />
-<lib-text-input label="Text Input" placeholder="Gabriel" />
-<br />
-<lib-textarea label="Textarea" placeholder="Oi meu nome é samara" />
-<br />
-<button vikButton type="button" [kind]="'pink'">Botão</button>
+<div class="processador">
+  <lib-textarea
+    style="height: inherit"
+    label="Entrada"
+    placeholder="X Y Z"
+    [formControl]="entrada"
+  />
+  <button vikButton type="button" [kind]="'pink'" (click)="processar()">
+    Processar
+  </button>
+  <lib-textarea
+    style="height: inherit"
+    label="Saída"
+    placeholder="XY XZ YZ"
+    [value]="saida"
+  />
+</div>
 <br />

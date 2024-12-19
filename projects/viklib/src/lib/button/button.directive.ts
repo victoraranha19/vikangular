@@ -20,7 +20,7 @@ export class ButtonDirective implements OnInit {
   @HostBinding('style.borderStyle') borderStyle = 'none';
   @HostBinding('style.borderRadius') borderRadius = '8px';
   @HostBinding('style.color') color = this._color.contrast;
-  @HostBinding('style.minWidth') minWidth = '80px';
+  @HostBinding('style.minWidth') minWidth = '160px';
   @HostBinding('style.minHeight') minHeight = '40px';
   @HostBinding('style.cursor') cursor = 'pointer';
   @HostBinding('style.fontWeight') fontWeight = 'bold';

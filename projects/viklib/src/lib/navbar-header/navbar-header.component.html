@@ -1,7 +1,7 @@
 <nav *ngIf="!demo">
   <a
     *ngFor="let item of navbarContent"
-    [href]="item.href ?? 'javascript:void(0)'"
+    [href]="item.href ?? ''"
     [routerLink]="item.routerLink"
   >
     {{ item.label }}
