@@ -2,18 +2,20 @@
 <br />
 <div class="processador">
   <lib-textarea
-    style="height: inherit"
+    style="height: inherit; width: 500px; margin: 0 4px"
     label="Entrada"
     placeholder="X Y Z"
+    [resize]="'none'"
     [formControl]="entrada"
   />
   <button vikButton type="button" [kind]="'pink'" (click)="processar()">
     Processar
   </button>
   <lib-textarea
-    style="height: inherit"
+    style="height: inherit; width: 500px; margin: 0 4px"
     label="Saída"
     placeholder="XY XZ YZ"
+    [resize]="'none'"
     [value]="saida"
   />
 </div>

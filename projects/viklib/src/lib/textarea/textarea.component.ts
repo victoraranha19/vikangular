@@ -15,7 +15,6 @@ import {
 
 @Component({
   selector: 'lib-textarea',
-  standalone: true,
   imports: [CommonModule, FormsModule, ReactiveFormsModule],
   styleUrls: ['./textarea.component.scss'],
   template: `
@@ -27,6 +26,7 @@ import {
         [value]="value"
         [placeholder]="placeholder"
         [formControl]="formControl"
+        [ngStyle]="{ resize: resize }"
       ></textarea>
     </section>
   `,
@@ -36,6 +36,7 @@ export class TextareaComponent implements OnInit {
   @Input() label = '';
   @Input() placeholder = '';
   @Input() value = '';
+  @Input() resize: 'none' | 'both' | 'horizontal' | 'vertical' = 'both';
   @Input() formControl: UntypedFormControl = new UntypedFormControl(null);
 
   @ViewChild('textarea') textarea!: TemplateRef<Element>;

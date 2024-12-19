@@ -1,7 +1,6 @@
 .processador {
-  display: grid;
+  display: flex;
+  justify-content: center;
   align-items: end;
-  grid-template-columns: auto 160px auto;
-  gap: 4px;
   height: 600px;
 }
